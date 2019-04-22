@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Pedro Lontro",
+      "authorEmail": "pedro_lontro@hotmail.com",
+      "authorUrl": ""
+    }
+  }
+}
