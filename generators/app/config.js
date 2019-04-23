@@ -2,7 +2,7 @@ module.exports = {
     sistemas: ['TB'],
     sistemaDefault: 'TB',
     context: {
-        TB: ['Imobiliario', 'Mobiliario', 'DividaAtiva', 'Juridico', 'Fiscalizacao', 'Sistema', 'CentraldeAtendimento', 'Tesouraria', 'Processos', 'SimplesNacional']
+        TB: ['Imobiliario', 'Mobiliario', 'DividaAtiva', 'Juridico', 'Fiscalizacao', 'Sistema', 'Atendimento', 'Tesouraria', 'Obras', 'SimplesNacional']
     },
     templates: [
         {
