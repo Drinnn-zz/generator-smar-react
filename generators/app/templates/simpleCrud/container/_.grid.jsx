@@ -52,7 +52,7 @@ class Container extends Component {
       recurso: DDados.Titulo,
       service: api.filter,
       filterVersion: 1,
-      webStorage: "<%= domainArray[0] %>.<%= domainArray[1] %>.<%= objectName %>",
+      webStorage: "<%= domainNoDiacriticsArray[0] %>.<%= domainNoDiacriticsArray[1] %>.<%= objectName %>",
       backRoute: '<%= domain.split("/").join(".") %>',
       applySearchOnLoad: false
     };

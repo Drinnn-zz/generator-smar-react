@@ -75,11 +75,13 @@ module.exports = class extends Generator {
 
       let splitDomainName = this.props.domainName.split('/');
       let normalizedDomainName = splitDomainName.map((str) => { return normalize(str) });
+      let noDiacriticsDomainName = splitDomainName.map((str) => { return removeDiacritics(str) });
 
       this.props.domain = normalizedDomainName.join('/').toLowerCase() + '/' + this.props.moduleName;
       this.props.domainNormalized = normalizedDomainName.join('/') + '/' + this.props.moduleName;
       splitDomainName.push(this.props.name);
       this.props.domainArray = splitDomainName;
+      this.props.noDiacriticsDomainArray = noDiacriticsDomainName;
     });
   }
 
@@ -95,7 +97,8 @@ module.exports = class extends Generator {
       moduleNameLower: this.props.moduleNameLower,
       domain: this.props.domain,
       domainArray: this.props.domainArray,
-      domainNormalized: this.props.domainNormalized
+      domainNormalized: this.props.domainNormalized,
+      domainNoDiacriticsArray: this.props.noDiacriticsDomainArray
     };
 
     for (var index in this.props.template) {
