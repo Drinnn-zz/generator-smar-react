@@ -30,7 +30,7 @@ class Container extends Component {
         const isView = prefix == "V";
 
         return (
-            <Form onSubmit={onSubmit} boxForm onCancel={onCancel || this.onCancel} initialValues={this.initialValues} prefix={prefix} title={Titulo}>
+            <Form onSubmit={onSubmit} boxForm onCancel={onCancel || this.onCancel} initialValues={this.initialValues} prefix={prefix} title={Titulo} formControl={true}>
                 {form => (
                     <Fragment>
                        

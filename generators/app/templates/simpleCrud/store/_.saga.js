@@ -2,22 +2,23 @@ import api from "../service/<%= moduleName %>.service";
 import * as types from "./<%= moduleName %>.actionTypes";
 import formActions from "@common/store/form/form.actions";
 import { takeEvery, call, put } from "redux-saga/effects";
-import <%= moduleName %>Actions from "./<%= moduleName %>.actions";
+import <%= moduleName %> Actions from "./<%= moduleName %>.actions";
 
 export default workSaga;
 
 function* workSaga() {
-    yield takeEvery(types.<%= objectName.toUpperCase() %>_POST, save);
-    yield takeEvery(types.<%= objectName.toUpperCase() %>_GET, getById);
-    yield takeEvery(types.<%= objectName.toUpperCase() %>_PUT, update);
-    yield takeEvery(types.<%= objectName.toUpperCase() %>_DELETE, remove);
+    yield takeEvery(types.<%= objectName.toUpperCase() %> _POST, save);
+    yield takeEvery(types.<%= objectName.toUpperCase() %> _GET, getById);
+    yield takeEvery(types.<%= objectName.toUpperCase() %> _PUT, update);
+    yield takeEvery(types.<%= objectName.toUpperCase() %> _DELETE, remove);
 }
 
 function* getById(action) {
     const { payload } = action;
 
     const result = yield call(api.getById, payload);
-    yield put(<%= moduleName %>Actions.set<%= objectName %>(result.data));
+    yield put(<%= moduleName %> Actions.set <%= objectName %> (result.data));
+    yield put(formActions.setInitialValuesOnEdit(result.data));
 }
 
 function* save(action) {
