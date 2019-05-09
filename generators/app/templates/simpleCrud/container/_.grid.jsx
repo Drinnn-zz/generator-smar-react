@@ -53,7 +53,6 @@ class Container extends Component {
       service: api.filter,
       filterVersion: 1,
       webStorage: "<%= domainNoDiacriticsArray[0] %>.<%= domainNoDiacriticsArray[1] %>.<%= objectName %>",
-      backRoute: '<%= domain.split("/").join(".") %>',
       applySearchOnLoad: false
     };
 
