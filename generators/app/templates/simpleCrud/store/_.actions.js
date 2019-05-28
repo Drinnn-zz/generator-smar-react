@@ -5,9 +5,9 @@ export default {
         type: types.<%= objectName.toUpperCase() %>_POST,
         payload: data
     }),
-    getById: id => ({
+    getById: (id, route) => ({
         type: types.<%= objectName.toUpperCase() %>_GET,
-        payload: id
+        payload: { id, route }
     }),
     set<%= objectName %>: data => ({
         type: types.<%= objectName.toUpperCase() %>_SET,

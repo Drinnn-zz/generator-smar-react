@@ -25,12 +25,12 @@ class Container extends Component {
 
     render() {
         const { Titulo, Campos } = DDados;
-        const { onSubmit, onCancel, prefix } = this.props;
+        const { onSubmit, onCancel, prefix, routerManager } = this.props;
         const { <%= moduleName %> } = this.props.<%= moduleName %>Selector;
         const isView = prefix == "V";
 
         return (
-            <Form onSubmit={onSubmit} boxForm onCancel={onCancel || this.onCancel} initialValues={this.initialValues} prefix={prefix} title={Titulo} formControl={true}>
+            <Form onSubmit={onSubmit} boxForm onCancel={onCancel || this.onCancel} initialValues={this.initialValues} prefix={prefix} title={Titulo} formControl={true} routerManager={routerManager}>
                 {form => (
                     <Fragment>
                        

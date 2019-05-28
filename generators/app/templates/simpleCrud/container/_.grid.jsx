@@ -42,7 +42,7 @@ class Container extends Component {
           );
           if (result) this.props.<%= moduleName %>Actions.remove(dataItem.Id);
         },
-        url: "<%= domain %>/delete"
+        url: "/<%= domain %>/delete"
       }
     ];
 
@@ -63,7 +63,7 @@ class Container extends Component {
           routerManager.redirect({
             name: '<%= domain.split("/").join(".") %>.new'
           }),
-        route: '<%= domain.split("/").join(".") %>.new'
+        route: '/<%= domain.split("/").join(".") %>.new'
       },
       massDelete: { service: api.massDelete, url: "<%= domain %>/massdelete" }
     };
