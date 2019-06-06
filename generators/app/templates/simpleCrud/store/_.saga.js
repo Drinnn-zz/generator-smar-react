@@ -18,7 +18,7 @@ function* getById(action) {
     const { route, id } = payload;
     try{
         const result = yield call(api.getById, id);
-        yield put(<%= moduleName %> Actions.set <%= objectName %> (result.data));
+        yield put(<%= moduleName %>Actions.set<%= objectName %>(result.data));
         yield put(formActions.setInitialValuesOnEdit(result.data));
     } catch (error){
         if (route) yield put(formActions.redirect(route));
